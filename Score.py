@@ -1,6 +1,4 @@
 import turtle
-from turtle import Turtle
-
 
 class Score(turtle.Turtle):
 
