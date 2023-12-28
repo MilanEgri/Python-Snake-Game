@@ -1,13 +1,18 @@
 from turtle import Screen
 import time
-import Snake
+from Snake import Snake
+from Food import Food
+
 screen = Screen()
-snake = Snake.Snake()
+snake = Snake()
+food = Food()
 SPEED = 9
 screen.setup(600,600)
 screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
+
+
 screen.listen()
 screen.onkey(snake.turn_left,"a")
 screen.onkey(snake.turn_right,"d")
