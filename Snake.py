@@ -1,5 +1,7 @@
 from turtle import Turtle
+
 MOVE_DISTANCE = 20
+
 
 class Snake:
     turtles = []
@@ -20,3 +22,9 @@ class Snake:
         self.positions = [list(self.turtles[0].position())] + new_positions
         for i in range(len(self.positions)):
             self.turtles[i].goto(self.positions[i][0], self.positions[i][1])
+
+    def turn_left(self):
+        self.turtles[0].left(90)
+
+    def turn_right(self):
+        self.turtles[0].right(90)
