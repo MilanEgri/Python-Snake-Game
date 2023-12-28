@@ -23,6 +23,18 @@ class Snake:
         for i in range(len(self.positions)):
             self.turtles[i].goto(self.positions[i][0], self.positions[i][1])
 
+    def grow(self):
+        turtle = Turtle()
+        turtle.shape("square")
+        turtle.color("white")
+        turtle.penup()
+        turtle.goto(self.turtles[0].position()[0], self.turtles[0].position()[1])
+        self.turtles.insert(0,turtle)
+        self.turtles[0].forward(MOVE_DISTANCE)
+        self.positions = [list(self.turtles[0].position())] + self.positions
+        for i in range(len(self.positions)):
+            self.turtles[i].goto(self.positions[i][0], self.positions[i][1])
+
     def turn_left(self):
         self.turtles[0].left(90)
 

@@ -8,6 +8,9 @@ class Food(Turtle):
         self.shapesize(0.5,0.5)
         self.color("red")
         self.speed(0)
+        self.respawn()
+
+    def respawn(self):
         random_x = random.randint(-280,280)
         random_y = random.randint(-280,280)
         self.goto(random_x,random_y)
