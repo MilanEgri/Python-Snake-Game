@@ -15,3 +15,7 @@ class Score(turtle.Turtle):
         self.score += 1
         self.clear()
         self.write(f"Score: {self.score}", align="center", font=("Arial", 25, 'bold'))
+    def restart(self):
+        self.score =0
+        self.clear()
+        self.write(f"Score: {self.score}", align="center", font=("Arial", 25, 'bold'))

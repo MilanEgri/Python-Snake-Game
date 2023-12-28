@@ -20,6 +20,9 @@ screen.onkey(snake.turn_right,"d")
 screen.onkey(snake.turn_left,"Left")
 screen.onkey(snake.turn_right,"Right")
 
+
+screen.onkeypress(screen.bye, "Escape")
+
 is_game_on = True
 while is_game_on:
     snake.move()
@@ -28,6 +31,9 @@ while is_game_on:
         food.respawn()
         snake.grow()
         scoreboard.getScore()
+
+    if snake.turtles[0].xcor() > 280 or snake.turtles[0].xcor() < -280 or snake.turtles[0].ycor() > 280 or snake.turtles[0].ycor() < -280:
+        scoreboard.restart()
+        snake.reset()
     screen.update()
 
-screen.exitonclick()
