@@ -11,6 +11,8 @@ screen.tracer(0)
 screen.listen()
 screen.onkey(snake.turn_left,"a")
 screen.onkey(snake.turn_right,"d")
+screen.onkey(snake.turn_left,"Left")
+screen.onkey(snake.turn_right,"Right")
 
 
 
