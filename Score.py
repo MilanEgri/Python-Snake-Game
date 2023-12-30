@@ -9,9 +9,6 @@ class Score(turtle.Turtle):
         self.hideturtle()
         self.color("white")
         self.penup()
-        ##self.goto(0, 265)
-        ##self.write(f"Score: {self.score}", align="left", font=("Arial", 25, 'bold'))
-        ##self.write(f"Record: {self.record}", align="right", font=("Arial", 25, 'bold'))
         self.displayScore()
 
     def getScore(self):
