@@ -24,6 +24,10 @@ screen.onkey(snake.turn_right,"Right")
 screen.onkeypress(screen.bye, "Escape")
 
 is_game_on = True
+def restart_game():
+    scoreboard.restart()
+    snake.reset()
+    food.respawn()
 while is_game_on:
     snake.move()
     time.sleep(1-(SPEED/10))
@@ -33,7 +37,12 @@ while is_game_on:
         scoreboard.getScore()
 
     if snake.turtles[0].xcor() > 280 or snake.turtles[0].xcor() < -280 or snake.turtles[0].ycor() > 280 or snake.turtles[0].ycor() < -280:
-        scoreboard.restart()
-        snake.reset()
+        restart_game()
+    for segment in snake.turtles:
+        if segment == snake.turtles[0]:
+            pass
+        elif snake.turtles[0].distance(segment) <10:
+            restart_game()
+            break
     screen.update()
 
